@@ -10,8 +10,6 @@ public class Shootclosest : MonoBehaviour
     public float Distance;
     public Transform closestEnemyPostion;
 
-
-
     private void Start()
     {
         //  parent = GetComponentInParent<GameObject>();
@@ -21,10 +19,6 @@ public class Shootclosest : MonoBehaviour
         FindClosestEnemy();
         fire();
     }
-
-
-
-   
     void fire()
     {
 
@@ -34,14 +28,8 @@ public class Shootclosest : MonoBehaviour
 
             EvolutionBullett.GetComponent<TurretBullet>().EnemyPosition = closestEnemyPostion;
             nextFire = Time.time + fireRate;
-
         }
-
     }
-
-
-
-
 
     void FindClosestEnemy()
     {
@@ -66,11 +54,6 @@ public class Shootclosest : MonoBehaviour
         {
             Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
 
-
         }
     }
-
-
-   
-
 }

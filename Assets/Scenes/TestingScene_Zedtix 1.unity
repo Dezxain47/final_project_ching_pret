@@ -248,6 +248,7 @@ MonoBehaviour:
     - Enemy: {fileID: 2797327662496399954, guid: 015816eedfc05654caa1b7cd066d919a, type: 3}
       Chance: 0
     waveDuration: 10
+    SpawnTimer: 0
     EnemyNumber: 5
     SpawnAll: 1
   - Enemys:
@@ -256,6 +257,7 @@ MonoBehaviour:
     - Enemy: {fileID: 2797327662496399954, guid: 015816eedfc05654caa1b7cd066d919a, type: 3}
       Chance: 100
     waveDuration: 30
+    SpawnTimer: 0
     EnemyNumber: 15
     SpawnAll: 0
   - Enemys:
@@ -266,6 +268,7 @@ MonoBehaviour:
     - Enemy: {fileID: 3699715325679517183, guid: 47fea5dfb1a8d114dae43761566d59e4, type: 3}
       Chance: 50
     waveDuration: 30
+    SpawnTimer: 0
     EnemyNumber: 15
     SpawnAll: 0
   WaveText: {fileID: 1146563118}
@@ -273,7 +276,7 @@ MonoBehaviour:
   waveTimer: 0
   StartSpawnTimer: 0
   TheCurantWave: 0
-  SpawnedEnemysNum: 0
+  SpawnAll: 0
 --- !u!1 &141312787
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,10 +322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352736f7308f27f4c81a77c9b2f951e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5598432098326194936, guid: 399e62bb0acac8c4fa199350b615bc0e, type: 3}
-  bulletTransform: {fileID: 1101427298}
+  bulletPrefab: {fileID: 0}
+  FirePostion: {fileID: 0}
   canFire: 0
   timeBetweenFiring: 0.25
+  BulletDamage: 5
 --- !u!1 &168387356
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +586,7 @@ SpriteRenderer:
   m_Size: {x: 40, y: 40}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &344356491
@@ -812,17 +816,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84e6ed62bb4f3843bcacf08a82bbe1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MOVE_SPEED: 5
-  Right: 1
-  dashLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  rollSpeed: 0
-  role: 35
-  publicdashAmount: 5
+  movmentSpeed: 5
+  dashSpeed: 0
+  dashForce: 35
   cooltime: 1
-  runSpeed: 20
-  dodge: 0
+  Dashing: 0
 --- !u!114 &413327563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,11 +833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2e0c83e745fe04ea7ac27bcb1fe405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 100
-  currenthealth: 0
-  dodge: 0
-  healthbar: {fileID: 1143558656}
-  period: 0.1
 --- !u!61 &413327564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1224,7 +1217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806541734d1a4164fb0a841106f20762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1143558657}
 --- !u!114 &1143558657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,46 +1721,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3db0d65a39e80439c6e14afc02ec4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WavesList:
-  - Enemys:
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    waveDuration: 0
-    EnemyNumber: 0
-    SpawnAll: 0
-  - Enemys:
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    waveDuration: 0
-    EnemyNumber: 0
-    SpawnAll: 0
-  - Enemys:
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    - enemy: {fileID: 0}
-      Value: 0
-      Weight: 0
-    waveDuration: 0
-    EnemyNumber: 0
-    SpawnAll: 0
 --- !u!4 &1754702029
 Transform:
   m_ObjectHideFlags: 0
