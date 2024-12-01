@@ -71,14 +71,16 @@ public class PlayerHealth : MonoBehaviour
         if (CurrentHealth + Healing >= MaxHealth)
         {
             CurrentHealth = MaxHealth;
-
         }
         else
         {
             CurrentHealth += Healing;
         }
 
+        sethealth(CurrentHealth); // อัปเดต UI หลังการ Heal
+        Debug.Log($"Player healed: {Healing}. Current health: {CurrentHealth}");
     }
+
     public void setmaxhealth(float mhealth)
     {
 

@@ -10,11 +10,13 @@ public class RandomSpawner : MonoBehaviour
     private float Timer;
     public float StartTimer = 2;
     public int SpawnNumber;
+
     private void Update()
     {
         Timer -= Time.deltaTime;
         if (Timer <= 0 && SpawnNumber > 0)
         {
+            Debug.Log($"Spawning {SpawnNumber} objects...");
             for (int i = 0; i < SpawnNumber; i++)
             {
                 SpawnObjects();
@@ -23,20 +25,21 @@ public class RandomSpawner : MonoBehaviour
             Timer = StartTimer;
         }
     }
+
     void SpawnObjects()
     {
-
         Vector3 randomPosition = RandomPositionInCircle();
+        Debug.Log($"Spawning at position: {randomPosition}");
         Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
-
     }
 
     Vector3 RandomPositionInCircle()
     {
-        float angle = Random.Range(0f, 360f);
+        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
         float distance = Random.Range(0f, spawnRadius);
-        float randomY = Random.Range(-spawnRadius, spawnRadius); // Random Y within circle
-        Vector3 randomPosition = spawnCenter.position + Quaternion.Euler(0, angle, 0) * (new Vector3(distance, randomY, 0));
-        return randomPosition;
+        float x = Mathf.Cos(angle) * distance;
+        float z = Mathf.Sin(angle) * distance;
+
+        return spawnCenter.position + new Vector3(x, 0, z);
     }
 }

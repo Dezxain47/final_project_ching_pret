@@ -20,10 +20,15 @@ public class RedPotion : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            AudioManager.instance.PlaySound("Heal");
+            Debug.Log("Player collided with RedPotion");
             collision.GetComponent<PlayerHealth>().Heal(HealAmount);
             Destroy(gameObject);
         }
+        else
+        {
+            Debug.Log($"Collision detected with tag: {collision.tag}");
+        }
     }
+
 }
 

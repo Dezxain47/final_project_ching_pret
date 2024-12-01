@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 371464908066948401}
   - component: {fileID: 371464908066948413}
   - component: {fileID: 371464908066948412}
+  - component: {fileID: 5815140765992547113}
   m_Layer: 0
   m_Name: Box
   m_TagString: Enemy
@@ -144,14 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51471bd14992dca4786622db1b3baa43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offect: {x: 0, y: 0, z: 0}
   maxhealth: 5
-  speed: 0
-  killvalue: 1
-  whatIsLoot: {fileID: 0}
-  BloodEffect: {fileID: 0}
   Coins: {fileID: 4857742709815181338, guid: 5f7e05c755299794db1380cf7418c8ee, type: 3}
   DamageText: {fileID: 0}
+  redPotionPrefab: {fileID: 0}
+  IsActived: 0
   flashMaterial: {fileID: 2100000, guid: 89cdae45751b4be49aa07c1090a4b4b5, type: 2}
   duration: 0
 --- !u!61 &371464908066948412
@@ -199,3 +197,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5815140765992547113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371464908066948400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea18d5f60bf4674d858946dbb4ed677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redPotionPrefab: {fileID: 4857742709815181338, guid: 5f7e05c755299794db1380cf7418c8ee, type: 3}
